@@ -90,4 +90,10 @@ public class SecondFragment extends Fragment {
         super.onDetach();
         Log.e(TAG, "onDetach");
     }
+
+    @Override
+    public void onSaveInstanceState(Bundle outState) {
+        super.onSaveInstanceState(outState);
+        Log.e(TAG, "onSaveInstanceState");
+    }
 }

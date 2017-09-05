@@ -28,7 +28,9 @@
         <activity
             android:name=".fragments.FragmentsActivity"
             android:label="@string/title_activity_fragments"
-            android:theme="@style/Theme.AppCompat.Light"></activity>
+            android:theme="@style/Theme.AppCompat.Light" />
+        <activity android:name=".news.NewsContentActivity" />
+        <activity android:name=".news.NewsActivity"></activity>
     </application>
 
 </manifest>
