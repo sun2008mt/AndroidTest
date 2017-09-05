@@ -35,6 +35,8 @@ public class FragmentsActivity extends AppCompatActivity {
         FragmentManager fragmentManager = getSupportFragmentManager();
         FragmentTransaction transaction = fragmentManager.beginTransaction();
         transaction.replace(R.id.right_layout, fragment);
+        //讲事务添加到返回栈中(类似于activity的back stack，按回退键会根据栈的顺序显示)
+//        transaction.addToBackStack(null);
         transaction.commit();
 
 
