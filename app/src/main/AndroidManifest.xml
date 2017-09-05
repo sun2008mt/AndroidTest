@@ -21,6 +21,12 @@
             android:name=".widgets.TitleActivity"
             android:theme="@style/Theme.AppCompat.Light">
         </activity>
+
+        <activity
+            android:name=".recyclerview.RecyclerViewActivity"
+            android:theme="@style/Theme.AppCompat.Light">
+
+        </activity>
     </application>
 
 </manifest>
