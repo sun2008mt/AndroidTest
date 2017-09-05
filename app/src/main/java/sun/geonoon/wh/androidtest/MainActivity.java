@@ -8,6 +8,7 @@ import android.view.View;
 
 import sun.geonoon.wh.androidtest.fragments.FragmentsActivity;
 import sun.geonoon.wh.androidtest.messaging.MessagingActivity;
+import sun.geonoon.wh.androidtest.news.NewsActivity;
 import sun.geonoon.wh.androidtest.recyclerview.RecyclerViewActivity;
 import sun.geonoon.wh.androidtest.widgets.TitleActivity;
 
@@ -46,6 +47,14 @@ public class MainActivity extends Activity {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(MainActivity.this, FragmentsActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        findViewById(R.id.btn5).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(MainActivity.this, NewsActivity.class);
                 startActivity(intent);
             }
         });
