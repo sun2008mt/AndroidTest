@@ -5,6 +5,7 @@ import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.support.v7.widget.StaggeredGridLayoutManager;
 import android.widget.LinearLayout;
 
 import java.util.ArrayList;
@@ -27,7 +28,9 @@ public class RecyclerViewActivity extends AppCompatActivity {
 
         initData();
         RecyclerView recyclerView = (RecyclerView) findViewById(R.id.recycler_view);
-        LinearLayoutManager layoutManager = new LinearLayoutManager(this);
+//        LinearLayoutManager layoutManager = new LinearLayoutManager(this);
+//        layoutManager.setOrientation(LinearLayoutManager.HORIZONTAL);
+        StaggeredGridLayoutManager layoutManager = new StaggeredGridLayoutManager(3, StaggeredGridLayoutManager.VERTICAL);
         recyclerView.setLayoutManager(layoutManager);
         TypeAdapter typeAdapter = new TypeAdapter(typeList);
         recyclerView.setAdapter(typeAdapter);

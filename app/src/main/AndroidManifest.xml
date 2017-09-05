@@ -16,17 +16,15 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
         <activity
             android:name=".widgets.TitleActivity"
-            android:theme="@style/Theme.AppCompat.Light">
-        </activity>
-
+            android:theme="@style/Theme.AppCompat.Light"></activity>
         <activity
             android:name=".recyclerview.RecyclerViewActivity"
-            android:theme="@style/Theme.AppCompat.Light">
-
-        </activity>
+            android:theme="@style/Theme.AppCompat.Light"></activity>
+        <activity
+            android:name=".messaging.MessagingActivity"
+            android:label="@string/title_activity_messaging"></activity>
     </application>
 
 </manifest>
