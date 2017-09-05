@@ -2,6 +2,9 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="sun.geonoon.wh.androidtest">
 
+    <!-- 获取访问系统网络状态的权限 -->
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -29,9 +32,13 @@
             android:name=".fragments.FragmentsActivity"
             android:label="@string/title_activity_fragments"
             android:theme="@style/Theme.AppCompat.Light" />
-        <activity android:name=".news.NewsContentActivity"
-            android:theme="@style/Theme.AppCompat.Light"/>
-        <activity android:name=".news.NewsActivity"
+        <activity
+            android:name=".news.NewsContentActivity"
+            android:theme="@style/Theme.AppCompat.Light" />
+        <activity
+            android:name=".news.NewsActivity"
+            android:theme="@style/Theme.AppCompat.Light" />
+        <activity android:name=".broadcast.BroadcastActivity"
             android:theme="@style/Theme.AppCompat.Light"></activity>
     </application>
 
