@@ -14,6 +14,7 @@ import sun.geonoon.wh.androidtest.R;
 
 public class BroadcastActivity extends AppCompatActivity {
 
+    //动态注册广播灵活性强，不过必须要在程序启动之后才能接收广播
     private NetworkChangeReceiver networkChangeReceiver;
 
     @Override

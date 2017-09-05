@@ -6,7 +6,9 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 
+import sun.geonoon.wh.androidtest.broadcast.BootCompleteReceiver;
 import sun.geonoon.wh.androidtest.broadcast.BroadcastActivity;
+import sun.geonoon.wh.androidtest.broadcast.LocalBroadcastActivity;
 import sun.geonoon.wh.androidtest.fragments.FragmentsActivity;
 import sun.geonoon.wh.androidtest.messaging.MessagingActivity;
 import sun.geonoon.wh.androidtest.news.NewsActivity;
@@ -71,14 +73,22 @@ public class MainActivity extends Activity {
         findViewById(R.id.btn7).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
+                //利用Intent对象发送自定义广播
+                Intent intent = new Intent("sun.geonoon.wh.androidtest.MY_BROADCAST");
+                //添加信息
+                intent.putExtra("sender", "Marc");
+                //默认是发送标准广播（异步）
+                sendBroadcast(intent);
+                //发送有序广播（同步，可拦截）
+                sendOrderedBroadcast(intent, null);
             }
         });
 
         findViewById(R.id.btn8).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
+                Intent intent = new Intent(MainActivity.this, LocalBroadcastActivity.class);
+                startActivity(intent);
             }
         });
 

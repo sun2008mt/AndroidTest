@@ -5,6 +5,9 @@
     <!-- 获取访问系统网络状态的权限 -->
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
 
+    <!-- 获取接收系统开机广播的权限 -->
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -38,8 +41,33 @@
         <activity
             android:name=".news.NewsActivity"
             android:theme="@style/Theme.AppCompat.Light" />
-        <activity android:name=".broadcast.BroadcastActivity"
-            android:theme="@style/Theme.AppCompat.Light"></activity>
+        <activity
+            android:name=".broadcast.BroadcastActivity"
+            android:theme="@style/Theme.AppCompat.Light" />
+        <activity android:name=".broadcast.LocalBroadcastActivity"
+            android:theme="@style/Theme.AppCompat.Light"/>
+
+        <!-- 广播接收器注册 -->
+        <!-- enabled表示是否启用广播接收器，exported表示是否接收此程序外的广播信息 -->
+        <receiver
+            android:name=".broadcast.BootCompleteReceiver"
+            android:enabled="true"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED" />
+            </intent-filter>
+        </receiver>
+        <receiver
+            android:name=".broadcast.MyBroadcastReceiver"
+            android:enabled="true"
+            android:exported="true">
+
+            <!--设置广播优先级和action值-->
+            <intent-filter android:priority="100">
+                <action android:name="sun.geonoon.wh.androidtest.MY_BROADCAST"></action>
+            </intent-filter>
+
+        </receiver>
     </application>
 
 </manifest>
