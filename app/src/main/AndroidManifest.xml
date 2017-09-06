@@ -50,7 +50,11 @@
         <activity
             android:name=".forceoffline.LoginActivity"
             android:theme="@style/Theme.AppCompat.Light" />
-        <activity android:name=".datapersistence.FilePersistenceActivity"
+        <activity
+            android:name=".datapersistence.FilePersistenceActivity"
+            android:theme="@style/Theme.AppCompat.Light" />
+
+        <activity android:name=".datapersistence.SharedPreferenceActivity"
             android:theme="@style/Theme.AppCompat.Light"></activity>
 
         <!-- 广播接收器注册 -->
