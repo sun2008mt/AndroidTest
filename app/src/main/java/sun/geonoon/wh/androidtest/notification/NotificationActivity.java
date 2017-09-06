@@ -48,6 +48,7 @@ public class NotificationActivity extends AppCompatActivity {
 //                        .setDefaults(NotificationCompat.DEFAULT_ALL)               //采用默认设置
                         .setStyle(new NotificationCompat.BigPictureStyle().bigPicture(BitmapFactory.decodeResource(getResources(), R.mipmap.ic_launcher)))             //通知内容多样化
 //                        .setStyle(new NotificationCompat.BigTextStyle().bigText("aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"))
+                        .setPriority(NotificationCompat.PRIORITY_MAX)                     //设置通知的优先级
                         .setAutoCancel(true)          //点击后取消notification
                         .build();
                 manager.notify(1, notification);
