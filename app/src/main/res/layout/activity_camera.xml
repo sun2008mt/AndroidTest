@@ -11,7 +11,13 @@
         android:id="@+id/btn_take_photo"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Take Photo"/>
+        android:text="TakePhoto"/>
+
+    <Button
+        android:id="@+id/btn_choose_from_album"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="ChooseFromAlbum"/>
 
     <ImageView
         android:id="@+id/picture_taken"

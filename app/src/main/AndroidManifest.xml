@@ -77,8 +77,9 @@
         <activity
             android:name=".notification.NotificationActivity"
             android:theme="@style/Theme.AppCompat.Light" />
-        <activity android:name=".camera.CameraActivity"
-            android:theme="@style/Theme.AppCompat.Light"></activity>
+        <activity
+            android:name=".camera.CameraActivity"
+            android:theme="@style/Theme.AppCompat.Light" />
 
         <!-- 广播接收器注册 -->
         <!-- enabled表示是否启用广播接收器，exported表示是否接收此程序外的广播信息 -->
@@ -102,15 +103,15 @@
         </receiver>
 
         <provider
-            android:authorities="sun.geonoon.wh.androidtest.fileprovider"
             android:name="android.support.v4.content.FileProvider"
+            android:authorities="sun.geonoon.wh.androidtest.fileprovider"
             android:exported="false"
             android:grantUriPermissions="true">
-
-            <meta-data android:name="android.support.FILE_PROVIDER_PATHS"
-                android:resource="@xml/file_paths"></meta-data>
-
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/file_paths" />
         </provider>
+
     </application>
 
 </manifest>
