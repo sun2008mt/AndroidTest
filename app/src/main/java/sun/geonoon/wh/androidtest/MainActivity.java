@@ -10,6 +10,7 @@ import android.widget.Toast;
 import sun.geonoon.wh.androidtest.broadcast.BootCompleteReceiver;
 import sun.geonoon.wh.androidtest.broadcast.BroadcastActivity;
 import sun.geonoon.wh.androidtest.broadcast.LocalBroadcastActivity;
+import sun.geonoon.wh.androidtest.camera.CameraActivity;
 import sun.geonoon.wh.androidtest.contentprovider.ReadContactsActivity;
 import sun.geonoon.wh.androidtest.database.CreateDBActivity;
 import sun.geonoon.wh.androidtest.datapersistence.FilePersistenceActivity;
@@ -167,7 +168,8 @@ public class MainActivity extends BaseActivity {
         findViewById(R.id.btn17).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
+                Intent intent = new Intent(MainActivity.this, CameraActivity.class);
+                startActivity(intent);
             }
         });
 

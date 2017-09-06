@@ -14,6 +14,8 @@
     <uses-permission android:name="android.permission.READ_CONTACTS" />
     <!-- 获取手机震动的权限 -->
     <uses-permission android:name="android.permission.VIBRATE" />
+    <!-- 获取访问SD卡应用关联目录的权限（Android4.4之前需要声明） -->
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
 
     <application
         android:allowBackup="true"
@@ -72,7 +74,10 @@
         <activity
             android:name=".contentprovider.ReadContactsActivity"
             android:theme="@style/Theme.AppCompat.Light" />
-        <activity android:name=".notification.NotificationActivity"
+        <activity
+            android:name=".notification.NotificationActivity"
+            android:theme="@style/Theme.AppCompat.Light" />
+        <activity android:name=".camera.CameraActivity"
             android:theme="@style/Theme.AppCompat.Light"></activity>
 
         <!-- 广播接收器注册 -->
@@ -95,6 +100,17 @@
                 <action android:name="sun.geonoon.wh.androidtest.MY_BROADCAST" />
             </intent-filter>
         </receiver>
+
+        <provider
+            android:authorities="sun.geonoon.wh.androidtest.fileprovider"
+            android:name="android.support.v4.content.FileProvider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+
+            <meta-data android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/file_paths"></meta-data>
+
+        </provider>
     </application>
 
 </manifest>
