@@ -47,7 +47,10 @@
         <activity
             android:name=".broadcast.LocalBroadcastActivity"
             android:theme="@style/Theme.AppCompat.Light" />
-        <activity android:name=".forceoffline.LoginActivity"
+        <activity
+            android:name=".forceoffline.LoginActivity"
+            android:theme="@style/Theme.AppCompat.Light" />
+        <activity android:name=".datapersistence.FilePersistenceActivity"
             android:theme="@style/Theme.AppCompat.Light"></activity>
 
         <!-- 广播接收器注册 -->

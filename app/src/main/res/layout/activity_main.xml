@@ -80,5 +80,11 @@
             android:layout_height="wrap_content"
             android:text="ForceOffline"/>
 
+        <Button
+            android:id="@+id/btn11"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="FilePersistence"/>
+
     </LinearLayout>
 </android.support.constraint.ConstraintLayout>
