@@ -4,6 +4,7 @@ import android.app.Notification;
 import android.app.NotificationManager;
 import android.app.PendingIntent;
 import android.content.Intent;
+import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.Color;
 import android.net.Uri;
@@ -45,6 +46,8 @@ public class NotificationActivity extends AppCompatActivity {
                         //LED先绿色亮1秒，然后暗1秒（一闪一闪）
                         .setLights(Color.GREEN, 1000, 1000)                           //设置通知发出时LED闪烁
 //                        .setDefaults(NotificationCompat.DEFAULT_ALL)               //采用默认设置
+                        .setStyle(new NotificationCompat.BigPictureStyle().bigPicture(BitmapFactory.decodeResource(getResources(), R.mipmap.ic_launcher)))             //通知内容多样化
+//                        .setStyle(new NotificationCompat.BigTextStyle().bigText("aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"))
                         .setAutoCancel(true)          //点击后取消notification
                         .build();
                 manager.notify(1, notification);
