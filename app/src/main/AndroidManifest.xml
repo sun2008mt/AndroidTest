@@ -67,7 +67,10 @@
         <activity
             android:name=".runtimepermissions.CallPhoneActivity"
             android:theme="@style/Theme.AppCompat.Light" />
-        <activity android:name=".contentprovider.ReadContactsActivity"
+        <activity
+            android:name=".contentprovider.ReadContactsActivity"
+            android:theme="@style/Theme.AppCompat.Light" />
+        <activity android:name=".notification.NotificationActivity"
             android:theme="@style/Theme.AppCompat.Light"></activity>
 
         <!-- 广播接收器注册 -->
