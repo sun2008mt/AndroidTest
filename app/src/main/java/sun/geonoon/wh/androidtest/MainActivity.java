@@ -18,6 +18,7 @@ import sun.geonoon.wh.androidtest.fragments.FragmentsActivity;
 import sun.geonoon.wh.androidtest.messaging.MessagingActivity;
 import sun.geonoon.wh.androidtest.news.NewsActivity;
 import sun.geonoon.wh.androidtest.recyclerview.RecyclerViewActivity;
+import sun.geonoon.wh.androidtest.runtimepermissions.CallPhoneActivity;
 import sun.geonoon.wh.androidtest.widgets.TitleActivity;
 
 public class MainActivity extends BaseActivity {
@@ -140,7 +141,8 @@ public class MainActivity extends BaseActivity {
         findViewById(R.id.btn14).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
+                Intent intent = new Intent(MainActivity.this, CallPhoneActivity.class);
+                startActivity(intent);
             }
         });
 
