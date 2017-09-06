@@ -5,11 +5,15 @@ import android.app.NotificationManager;
 import android.app.PendingIntent;
 import android.content.Intent;
 import android.graphics.BitmapFactory;
+import android.graphics.Color;
+import android.net.Uri;
 import android.support.v4.app.NotificationCompat;
 import android.support.v4.app.NotificationManagerCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+
+import java.io.File;
 
 import sun.geonoon.wh.androidtest.MainActivity;
 import sun.geonoon.wh.androidtest.R;
@@ -35,6 +39,12 @@ public class NotificationActivity extends AppCompatActivity {
                         .setWhen(System.currentTimeMillis())
                         .setSmallIcon(R.mipmap.ic_launcher)
                         .setLargeIcon(BitmapFactory.decodeResource(getResources(), R.mipmap.ic_launcher))
+                        .setSound(Uri.fromFile(new File("/system/media/audio/ringtones/Luna.ogg")))             //设置通知发出的时候播放的音频文件
+                        //先静止，然后震动一秒，再静止一秒，最后震动一秒
+                        .setVibrate(new long[] {0, 1000, 1000, 1000})                     //设置通知发出时震动
+                        //LED先绿色亮1秒，然后暗1秒（一闪一闪）
+                        .setLights(Color.GREEN, 1000, 1000)                           //设置通知发出时LED闪烁
+//                        .setDefaults(NotificationCompat.DEFAULT_ALL)               //采用默认设置
                         .setAutoCancel(true)          //点击后取消notification
                         .build();
                 manager.notify(1, notification);
