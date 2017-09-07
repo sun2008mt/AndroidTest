@@ -26,6 +26,8 @@ public class HttpActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_http);
 
+        txtResponse = (TextView) findViewById(R.id.txt_response);
+
         findViewById(R.id.btn_send_request).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
