@@ -72,7 +72,7 @@ public class HttpActivity extends AppCompatActivity {
                 BufferedReader reader = null;
 
                 try {
-                    URL url = new URL("http://www.ofo.com/");
+                    URL url = new URL("https://www.ithome.com/");
                     connection = (HttpURLConnection) url.openConnection();
                     connection.setRequestMethod("GET");
                     connection.setConnectTimeout(8000);
