@@ -11,7 +11,13 @@
         android:id="@+id/btn_send_request"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="SendRequest"/>
+        android:text="HttpURLConnection"/>
+
+    <Button
+        android:id="@+id/btn_send_request_okhttp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="OkHttp"/>
 
     <ScrollView
         android:layout_width="match_parent"
