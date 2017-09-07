@@ -9,7 +9,8 @@
     tools:context="sun.geonoon.wh.androidtest.materialdesign.MaterialDesignActivity">
 
     <!--主屏幕显示的内容-->
-    <FrameLayout
+    <!-- CoordinatorLayout可以监听其所有子控件的各种事件 -->
+    <android.support.design.widget.CoordinatorLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
@@ -33,7 +34,7 @@
             android:src="@drawable/area_98"
             app:elevation="10dp"/>
 
-    </FrameLayout>
+    </android.support.design.widget.CoordinatorLayout>
 
     <!--滑动菜单中显示的内容-->
     <!-- 必须指定layout_gravity，可是是left，right，start，end等，表示滑动菜单在哪一侧 -->
