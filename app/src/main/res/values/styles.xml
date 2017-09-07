@@ -9,6 +9,12 @@
 
     </style>
 
+    <style name="NoActionBarTheme">
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+    </style>
+
     <style name="TestTheme" parent="Theme.AppCompat.DayNight"></style>
 
 </resources>

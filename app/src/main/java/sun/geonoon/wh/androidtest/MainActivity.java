@@ -15,6 +15,7 @@ import sun.geonoon.wh.androidtest.datapersistence.SharedPreferenceActivity;
 import sun.geonoon.wh.androidtest.forceoffline.LoginActivity;
 import sun.geonoon.wh.androidtest.fragments.FragmentsActivity;
 import sun.geonoon.wh.androidtest.lbs.LBSActivity;
+import sun.geonoon.wh.androidtest.materialdesign.MaterialDesignActivity;
 import sun.geonoon.wh.androidtest.messaging.MessagingActivity;
 import sun.geonoon.wh.androidtest.network_xml.HttpActivity;
 import sun.geonoon.wh.androidtest.news.NewsActivity;
@@ -194,6 +195,42 @@ public class MainActivity extends BaseActivity {
             public void onClick(View view) {
                 Intent intent = new Intent(MainActivity.this, LBSActivity.class);
                 startActivity(intent);
+            }
+        });
+
+        findViewById(R.id.btn21).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(MainActivity.this, MaterialDesignActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        findViewById(R.id.btn22).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+            }
+        });
+
+        findViewById(R.id.btn23).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+            }
+        });
+
+        findViewById(R.id.btn24).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+            }
+        });
+
+        findViewById(R.id.btn25).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
             }
         });
     }
