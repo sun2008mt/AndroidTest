@@ -15,6 +15,9 @@ import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
 import java.net.URL;
 
+import okhttp3.OkHttpClient;
+import okhttp3.Request;
+import okhttp3.Response;
 import sun.geonoon.wh.androidtest.R;
 
 public class HttpActivity extends AppCompatActivity {
@@ -32,6 +35,13 @@ public class HttpActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 sendRequestWithHttpURLConnection();
+            }
+        });
+
+        findViewById(R.id.btn_send_request_okhttp).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                sendRequestWithOkHttp();
             }
         });
     }
@@ -77,6 +87,27 @@ public class HttpActivity extends AppCompatActivity {
                     if (connection != null) {
                         connection.disconnect();
                     }
+                }
+            }
+        }).start();
+    }
+
+    private void sendRequestWithOkHttp() {
+        new Thread(new Runnable() {
+            @Override
+            public void run() {
+                OkHttpClient client = new OkHttpClient();
+                Request request = new Request.Builder()
+                        .url("http://www.baidu.com")
+                        .build();
+
+                try {
+                    Response response = client.newCall(request).execute();
+                    String responseData = response.body().string();
+                    showResponse(responseData);
+
+                } catch (IOException e) {
+                    e.printStackTrace();
                 }
             }
         }).start();
