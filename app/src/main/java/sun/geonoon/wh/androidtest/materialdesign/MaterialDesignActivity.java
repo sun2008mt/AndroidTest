@@ -1,5 +1,7 @@
 package sun.geonoon.wh.androidtest.materialdesign;
 
+import android.support.annotation.NonNull;
+import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBar;
@@ -24,6 +26,7 @@ public class MaterialDesignActivity extends AppCompatActivity {
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         mDrawerLayout = (DrawerLayout) findViewById(R.id.drawer_layout);
+        NavigationView navView = (NavigationView) findViewById(R.id.nav_view);
         //此ActionBar的具体实现是由ToolBar来完成的
         ActionBar actionBar = getSupportActionBar();
         if (actionBar != null) {
@@ -32,6 +35,16 @@ public class MaterialDesignActivity extends AppCompatActivity {
             //设置导航按钮图标
             actionBar.setHomeAsUpIndicator(R.mipmap.ic_launcher);
         }
+
+        //将Call菜单项设置为默认选中
+        navView.setCheckedItem(R.id.nav_call);
+        navView.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
+            @Override
+            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+                Toast.makeText(MaterialDesignActivity.this, "You clicked on " + item.getTitle(), Toast.LENGTH_SHORT).show();
+                return true;
+            }
+        });
     }
 
     @Override

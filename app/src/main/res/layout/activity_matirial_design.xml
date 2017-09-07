@@ -28,13 +28,23 @@
 
     <!--滑动菜单中显示的内容-->
     <!-- 必须指定layout_gravity，可是是left，right，start等，表示滑动菜单在哪一侧 -->
-    <TextView
+    <!--<TextView-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="match_parent"-->
+        <!--android:layout_gravity="start"-->
+        <!--android:text="This is menu"-->
+        <!--android:textSize="30sp"-->
+        <!--android:background="#FFFF"/>-->
+
+    <android.support.design.widget.NavigationView
+        android:id="@+id/nav_view"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_gravity="start"
-        android:text="This is menu"
-        android:textSize="30sp"
-        android:background="#FFFF"/>
+        app:menu="@menu/nav_menu"
+        app:headerLayout="@layout/nav_header">
+
+    </android.support.design.widget.NavigationView>
 
 </android.support.v4.widget.DrawerLayout>
 

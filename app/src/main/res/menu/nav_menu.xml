@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!-- 组中的所有菜单项只能单选 -->
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_call"
+            android:title="Call"
+            android:icon="@drawable/area_07" />
+
+        <item
+            android:id="@+id/nav_friends"
+            android:title="Friends"
+            android:icon="@drawable/area_08" />
+
+        <item
+            android:id="@+id/nav_location"
+            android:title="Location"
+            android:icon="@drawable/area_09" />
+
+        <item
+            android:id="@+id/nav_mail"
+            android:title="Mail"
+            android:icon="@drawable/area_14" />
+
+        <item
+            android:id="@+id/nav_task"
+            android:title="Location"
+            android:icon="@drawable/area_15" />
+
+    </group>
+
+</menu>
