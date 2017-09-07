@@ -1,6 +1,7 @@
 package sun.geonoon.wh.androidtest.materialdesign;
 
 import android.support.annotation.NonNull;
+import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
@@ -10,8 +11,10 @@ import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 import android.widget.Toast;
 
+import sun.geonoon.wh.androidtest.MainActivity;
 import sun.geonoon.wh.androidtest.R;
 
 public class MaterialDesignActivity extends AppCompatActivity {
@@ -43,6 +46,14 @@ public class MaterialDesignActivity extends AppCompatActivity {
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
                 Toast.makeText(MaterialDesignActivity.this, "You clicked on " + item.getTitle(), Toast.LENGTH_SHORT).show();
                 return true;
+            }
+        });
+
+        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.btn_floating);
+        fab.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Toast.makeText(MaterialDesignActivity.this, "FAB clicked", Toast.LENGTH_SHORT).show();
             }
         });
     }
