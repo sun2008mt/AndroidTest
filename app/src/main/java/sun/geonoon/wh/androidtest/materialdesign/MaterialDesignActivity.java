@@ -9,18 +9,42 @@ import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.GridLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Toast;
 
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Random;
+
 import sun.geonoon.wh.androidtest.MainActivity;
 import sun.geonoon.wh.androidtest.R;
+import sun.geonoon.wh.androidtest.recyclerview.Type;
 
 public class MaterialDesignActivity extends AppCompatActivity {
 
+    private static Type[] types = {
+            new Type(R.drawable.area_01, "Area 01"),
+            new Type(R.drawable.area_05, "Area 01"),
+            new Type(R.drawable.area_06, "Area 01"),
+            new Type(R.drawable.area_07, "Area 01"),
+            new Type(R.drawable.area_08, "Area 01"),
+            new Type(R.drawable.area_09, "Area 01"),
+            new Type(R.drawable.area_14, "Area 01"),
+            new Type(R.drawable.area_15, "Area 01"),
+            new Type(R.drawable.area_16, "Area 01"),
+            new Type(R.drawable.area_98, "Area 01")
+    };
+
     private DrawerLayout mDrawerLayout;
+
+    private List<Type> typeList = new ArrayList<>();
+
+    private TypeCardViewAdapter adapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -65,6 +89,13 @@ public class MaterialDesignActivity extends AppCompatActivity {
                         .show();
             }
         });
+
+        initTypes();
+        RecyclerView recyclerView = (RecyclerView) findViewById(R.id.recycler_view);
+        GridLayoutManager layoutManager = new GridLayoutManager(this, 2);
+        recyclerView.setLayoutManager(layoutManager);
+        adapter = new TypeCardViewAdapter(typeList);
+        recyclerView.setAdapter(adapter);
     }
 
     @Override
@@ -94,5 +125,15 @@ public class MaterialDesignActivity extends AppCompatActivity {
         }
 
         return true;
+    }
+
+    private void initTypes() {
+        typeList.clear();
+
+        for (int i = 0; i < 50; i++) {
+            Random random = new Random();
+            int index = random.nextInt(types.length);
+            typeList.add(types[index]);
+        }
     }
 }
