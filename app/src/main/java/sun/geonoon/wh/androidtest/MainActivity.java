@@ -1,13 +1,10 @@
 package sun.geonoon.wh.androidtest;
 
-import android.app.ActionBar;
-import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Toast;
 
-import sun.geonoon.wh.androidtest.broadcast.BootCompleteReceiver;
 import sun.geonoon.wh.androidtest.broadcast.BroadcastActivity;
 import sun.geonoon.wh.androidtest.broadcast.LocalBroadcastActivity;
 import sun.geonoon.wh.androidtest.camera.CameraActivity;
@@ -18,7 +15,7 @@ import sun.geonoon.wh.androidtest.datapersistence.SharedPreferenceActivity;
 import sun.geonoon.wh.androidtest.forceoffline.LoginActivity;
 import sun.geonoon.wh.androidtest.fragments.FragmentsActivity;
 import sun.geonoon.wh.androidtest.messaging.MessagingActivity;
-import sun.geonoon.wh.androidtest.network.HttpActivity;
+import sun.geonoon.wh.androidtest.network_xml.HttpActivity;
 import sun.geonoon.wh.androidtest.news.NewsActivity;
 import sun.geonoon.wh.androidtest.notification.NotificationActivity;
 import sun.geonoon.wh.androidtest.recyclerview.RecyclerViewActivity;

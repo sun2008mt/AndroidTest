@@ -85,7 +85,7 @@
         <activity
             android:name=".webview.WebViewActivity"
             android:theme="@style/Theme.AppCompat.Light" />
-        <activity android:name=".network.HttpActivity"
+        <activity android:name=".network_xml.HttpActivity"
             android:theme="@style/Theme.AppCompat.Light"></activity>
 
         <!-- 广播接收器注册 -->

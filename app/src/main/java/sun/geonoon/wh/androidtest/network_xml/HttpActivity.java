@@ -1,12 +1,14 @@
-package sun.geonoon.wh.androidtest.network;
+package sun.geonoon.wh.androidtest.network_xml;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.TextView;
 
-import org.w3c.dom.Text;
+import org.xml.sax.InputSource;
+import org.xml.sax.SAXException;
+import org.xml.sax.SAXParseException;
+import org.xml.sax.XMLReader;
 import org.xmlpull.v1.XmlPullParser;
 import org.xmlpull.v1.XmlPullParserException;
 import org.xmlpull.v1.XmlPullParserFactory;
@@ -19,6 +21,9 @@ import java.io.StringReader;
 import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
 import java.net.URL;
+
+import javax.xml.parsers.ParserConfigurationException;
+import javax.xml.parsers.SAXParserFactory;
 
 import okhttp3.OkHttpClient;
 import okhttp3.Request;
@@ -47,6 +52,13 @@ public class HttpActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 sendRequestWithOkHttp();
+            }
+        });
+
+        findViewById(R.id.btn_send_request_okhttp_sax).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                sendRequestWithOkHttpUsingSAX();
             }
         });
     }
@@ -117,7 +129,28 @@ public class HttpActivity extends AppCompatActivity {
                 }
             }
         }).start();
+    }
 
+    private void sendRequestWithOkHttpUsingSAX() {
+        new Thread(new Runnable() {
+            @Override
+            public void run() {
+                OkHttpClient client = new OkHttpClient();
+                Request request = new Request.Builder()
+                        .url("http://www.geonoon.com/get_data.xml")
+                        .build();
+
+                try {
+                    Response response = client.newCall(request).execute();
+                    String responseData = response.body().string();
+                    String content = parseXMLWithSAX(responseData);
+                    //无法直接使用TextView的setText()方法，因为这是在子线程中，而更新界面的操作必须要在UI主线程中
+                    showResponse(content);
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+            }
+        }).start();
     }
 
     private void showResponse(final String response) {
@@ -176,5 +209,26 @@ public class HttpActivity extends AppCompatActivity {
         }
 
         return content;
+    }
+
+    private String parseXMLWithSAX(String xmlData) {
+
+        SAXParserFactory factory = SAXParserFactory.newInstance();
+        ContentHandler handler = new ContentHandler();
+        try {
+            XMLReader xmlReader = factory.newSAXParser().getXMLReader();
+            //将ContentHandler的实例设置到XMLReader中
+            xmlReader.setContentHandler(handler);
+            //开始执行解析
+            xmlReader.parse(new InputSource(new StringReader(xmlData)));
+        } catch (SAXException e) {
+            e.printStackTrace();
+        } catch (ParserConfigurationException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+        return handler.getContent().toString();
     }
 }
