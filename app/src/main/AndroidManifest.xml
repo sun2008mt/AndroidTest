@@ -16,6 +16,8 @@
     <uses-permission android:name="android.permission.VIBRATE" />
     <!-- 获取访问SD卡应用关联目录的权限（Android4.4之前需要声明） -->
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <!-- 获取访问网络的权限 -->
+    <uses-permission android:name="android.permission.INTERNET" />
 
     <application
         android:allowBackup="true"
@@ -80,6 +82,11 @@
         <activity
             android:name=".camera.CameraActivity"
             android:theme="@style/Theme.AppCompat.Light" />
+        <activity
+            android:name=".webview.WebViewActivity"
+            android:theme="@style/Theme.AppCompat.Light" />
+        <activity android:name=".network.HttpActivity"
+            android:theme="@style/Theme.AppCompat.Light"></activity>
 
         <!-- 广播接收器注册 -->
         <!-- enabled表示是否启用广播接收器，exported表示是否接收此程序外的广播信息 -->
@@ -111,7 +118,6 @@
                 android:name="android.support.FILE_PROVIDER_PATHS"
                 android:resource="@xml/file_paths" />
         </provider>
-
     </application>
 
 </manifest>

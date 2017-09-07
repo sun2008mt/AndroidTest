@@ -121,13 +121,13 @@
                 android:id="@+id/btn18"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text=""/>
+                android:text="WebView"/>
 
             <Button
                 android:id="@+id/btn19"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text=""/>
+                android:text="HttpRequest"/>
 
             <Button
                 android:id="@+id/btn20"
