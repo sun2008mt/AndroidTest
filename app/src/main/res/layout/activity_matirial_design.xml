@@ -24,10 +24,19 @@
 
         </android.support.v7.widget.Toolbar>
 
+        <android.support.design.widget.FloatingActionButton
+            android:id="@+id/btn_floating"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom|end"
+            android:layout_margin="16dp"
+            android:src="@drawable/area_98"
+            app:elevation="10dp"/>
+
     </FrameLayout>
 
     <!--滑动菜单中显示的内容-->
-    <!-- 必须指定layout_gravity，可是是left，right，start等，表示滑动菜单在哪一侧 -->
+    <!-- 必须指定layout_gravity，可是是left，right，start，end等，表示滑动菜单在哪一侧 -->
     <!--<TextView-->
         <!--android:layout_width="match_parent"-->
         <!--android:layout_height="match_parent"-->
