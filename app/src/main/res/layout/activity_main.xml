@@ -6,85 +6,166 @@
     android:layout_height="match_parent"
     tools:context="sun.geonoon.wh.androidtest.MainActivity">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Hello World!"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
 
-    <LinearLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="vertical">
-
-        <Button
-            android:id="@+id/btn1"
+        <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="CustomizedView"/>
+            android:orientation="vertical">
 
-        <Button
-            android:id="@+id/btn2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="RecyclerView"/>
+            <Button
+                android:id="@+id/btn1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="CustomizedView"/>
 
-        <Button
-            android:id="@+id/btn3"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Messaging"/>
+            <Button
+                android:id="@+id/btn2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="RecyclerView"/>
 
-        <Button
-            android:id="@+id/btn4"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="ChangeFragments"/>
+            <Button
+                android:id="@+id/btn3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Messaging"/>
 
-        <Button
-            android:id="@+id/btn5"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="DifferentDPI"/>
+            <Button
+                android:id="@+id/btn4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="ChangeFragments"/>
 
-        <Button
-            android:id="@+id/btn6"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="DynamicBroadcast"/>
+            <Button
+                android:id="@+id/btn5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="DifferentDPI"/>
 
-        <Button
-            android:id="@+id/btn7"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="SendBroadcast"/>
+            <Button
+                android:id="@+id/btn6"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="DynamicBroadcast"/>
 
-        <Button
-            android:id="@+id/btn8"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="LocalBroadcast"/>
+            <Button
+                android:id="@+id/btn7"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="SendBroadcast"/>
 
-        <Button
-            android:id="@+id/btn9"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Login"/>
+            <Button
+                android:id="@+id/btn8"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="LocalBroadcast"/>
 
-        <Button
-            android:id="@+id/btn10"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="ForceOffline"/>
+            <Button
+                android:id="@+id/btn9"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Login"/>
 
-        <Button
-            android:id="@+id/btn11"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="FilePersistence"/>
+            <Button
+                android:id="@+id/btn10"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="ForceOffline"/>
 
-    </LinearLayout>
+            <Button
+                android:id="@+id/btn11"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="FilePersistence"/>
+
+            <Button
+                android:id="@+id/btn12"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="SharedPreferences"/>
+
+            <Button
+                android:id="@+id/btn13"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="DBOperations"/>
+
+            <Button
+                android:id="@+id/btn14"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="RuntimePermissions"/>
+
+            <Button
+                android:id="@+id/btn15"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="ReadContacts"/>
+
+            <Button
+                android:id="@+id/btn16"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Notification"/>
+
+            <Button
+                android:id="@+id/btn17"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Camera"/>
+
+            <Button
+                android:id="@+id/btn18"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="WebView"/>
+
+            <Button
+                android:id="@+id/btn19"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="HttpRequest"/>
+
+            <Button
+                android:id="@+id/btn20"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="LBS"/>
+
+            <Button
+                android:id="@+id/btn21"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="MaterialDesign"/>
+
+            <Button
+                android:id="@+id/btn22"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Thread"/>
+
+            <Button
+                android:id="@+id/btn23"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Download"/>
+
+            <Button
+                android:id="@+id/btn24"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Service"/>
+
+            <Button
+                android:id="@+id/btn25"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text=""/>
+
+        </LinearLayout>
+
+    </ScrollView>
 </android.support.constraint.ConstraintLayout>

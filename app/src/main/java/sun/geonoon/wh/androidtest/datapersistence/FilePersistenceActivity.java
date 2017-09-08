@@ -3,6 +3,7 @@ package sun.geonoon.wh.androidtest.datapersistence;
 import android.content.Context;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.text.TextUtils;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -37,8 +38,9 @@ public class FilePersistenceActivity extends AppCompatActivity {
         btnSaveFile.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if (!"".equals(txtEdit.getText().toString())) {
-                    save(txtEdit.getText().toString());
+                String data = txtEdit.getText().toString();
+                if (!TextUtils.isEmpty(data)) {
+                    save(data);
                     //默认会存储到内部存储空间的/data/data/<package name>/files/<file name>目录下
                     Toast.makeText(FilePersistenceActivity.this, "save file successfully!", Toast.LENGTH_SHORT).show();
                 } else {
@@ -51,7 +53,7 @@ public class FilePersistenceActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 String data = load();
-                if (!"".equals(data)) {
+                if (!TextUtils.isEmpty(data)) {
                     txtContent.setText(data);
                     Toast.makeText(FilePersistenceActivity.this, "read file successfully!", Toast.LENGTH_SHORT).show();
                 } else {

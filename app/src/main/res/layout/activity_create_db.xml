@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="sun.geonoon.wh.androidtest.database.CreateDBActivity">
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <Button
+            android:id="@+id/btn_create_db"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="CreateDB"/>
+
+        <Button
+            android:id="@+id/btn_add_data"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="AddData"/>
+
+        <Button
+            android:id="@+id/btn_update_data"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="UpdateData"/>
+
+        <Button
+            android:id="@+id/btn_delete_data"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="DeleteData"/>
+
+        <Button
+            android:id="@+id/btn_query_data"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="QueryData"/>
+
+        <TextView
+            android:id="@+id/txt_content"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Content of Query Result"/>
+
+    </LinearLayout>
+
+</android.support.constraint.ConstraintLayout>

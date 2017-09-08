@@ -1,57 +1,136 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="sun.geonoon.wh.androidtest">
+          package="sun.geonoon.wh.androidtest">
 
-    <!-- 获取访问系统网络状态的权限 -->
-    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <!-- 获取运营商信息，用于支持提供运营商信息相关的接口 -->
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
 
-    <!-- 获取接收系统开机广播的权限 -->
-    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+    <!-- 获取打电话的权限 -->
+    <!-- 危险权限需要首先在此声明，然后在程序中也要运行时再次请求等 -->
+    <uses-permission android:name="android.permission.CALL_PHONE"/>
+    <!-- 获取接收开机启动通知的权限 -->
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED"/>
+    <!-- 获取读取联系人的权限 -->
+    <uses-permission android:name="android.permission.READ_CONTACTS"/>
+    <!-- 获取手机震动的权限 -->
+    <uses-permission android:name="android.permission.VIBRATE"/>
+    <!-- 获取访问SD卡应用关联目录的权限（Android4.4之前需要声明） -->
+    <!-- 写入扩展存储，向扩展卡写入数据，用于写入离线定位数据 -->
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <!-- 获取访问网络的权限 -->
+    <!-- 访问网络，网络定位需要上网 -->
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <!-- 获取得到用户位置信息的权限 -->
+    <!-- 这个权限用于进行网络定位 -->
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
+    <!-- 这个权限用于访问GPS定位 -->
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
+    <!-- 用于访问wifi网络信息，wifi信息会用于进行网络定位 -->
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE"/>
+    <!-- 这个权限用于获取wifi的获取权限，wifi信息会用来进行网络定位 -->
+    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE"/>
+    <!-- 获取读取手机状态的权限 -->
+    <uses-permission android:name="android.permission.READ_PHONE_STATE"/>
+    <!-- SD卡读取权限，用户写入离线定位数据 -->
+    <uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS"/>
+    <uses-permission android:name="android.permission.WAKE_LOCK"/>
+    <uses-permission android:name="android.permission.GET_TASKS"/>
+    <uses-permission android:name="com.android.launcher.permission.READ_SETTINGS"/>
+    <uses-permission android:name="android.permission.WRITE_SETTINGS"/>
 
     <application
+        android:name=".MyApplication"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat.DayNight">
+        <meta-data
+            android:name="com.baidu.lbsapi.API_KEY"
+            android:value="mGqVgyMSEkUVTmgPE02zRtYsivZi4KVK">
+        </meta-data>
+
         <activity android:name=".MainActivity">
             <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
+                <action android:name="android.intent.action.MAIN"/>
 
-                <category android:name="android.intent.category.LAUNCHER" />
+                <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </activity>
         <activity
             android:name=".widgets.TitleActivity"
-            android:theme="@style/Theme.AppCompat.Light" />
+            android:theme="@style/Theme.AppCompat.Light"/>
         <activity
             android:name=".recyclerview.RecyclerViewActivity"
-            android:theme="@style/Theme.AppCompat.Light" />
+            android:theme="@style/Theme.AppCompat.Light"/>
         <activity
             android:name=".messaging.MessagingActivity"
-            android:label="@string/title_activity_messaging" />
+            android:label="@string/title_activity_messaging"/>
         <activity
             android:name=".fragments.FragmentsActivity"
             android:label="@string/title_activity_fragments"
-            android:theme="@style/Theme.AppCompat.Light" />
+            android:theme="@style/Theme.AppCompat.Light"/>
         <activity
             android:name=".news.NewsContentActivity"
-            android:theme="@style/Theme.AppCompat.Light" />
+            android:theme="@style/Theme.AppCompat.Light"/>
         <activity
             android:name=".news.NewsActivity"
-            android:theme="@style/Theme.AppCompat.Light" />
+            android:theme="@style/Theme.AppCompat.Light"/>
         <activity
             android:name=".broadcast.BroadcastActivity"
-            android:theme="@style/Theme.AppCompat.Light" />
+            android:theme="@style/Theme.AppCompat.Light"/>
         <activity
             android:name=".broadcast.LocalBroadcastActivity"
-            android:theme="@style/Theme.AppCompat.Light" />
+            android:theme="@style/Theme.AppCompat.Light"/>
         <activity
             android:name=".forceoffline.LoginActivity"
-            android:theme="@style/Theme.AppCompat.Light" />
-        <activity android:name=".datapersistence.FilePersistenceActivity"
-            android:theme="@style/Theme.AppCompat.Light"></activity>
+            android:theme="@style/Theme.AppCompat.Light"/>
+        <activity
+            android:name=".datapersistence.FilePersistenceActivity"
+            android:theme="@style/Theme.AppCompat.Light"/>
+        <activity
+            android:name=".datapersistence.SharedPreferenceActivity"
+            android:theme="@style/Theme.AppCompat.Light"/>
+        <activity
+            android:name=".database.CreateDBActivity"
+            android:theme="@style/Theme.AppCompat.Light"/>
+        <activity
+            android:name=".runtimepermissions.CallPhoneActivity"
+            android:theme="@style/Theme.AppCompat.Light"/>
+        <activity
+            android:name=".contentprovider.ReadContactsActivity"
+            android:theme="@style/Theme.AppCompat.Light"/>
+        <activity
+            android:name=".notification.NotificationActivity"
+            android:theme="@style/Theme.AppCompat.Light"/>
+        <activity
+            android:name=".camera.CameraActivity"
+            android:theme="@style/Theme.AppCompat.Light"/>
+        <activity
+            android:name=".webview.WebViewActivity"
+            android:theme="@style/Theme.AppCompat.Light"/>
+        <activity
+            android:name=".network_xml.HttpActivity"
+            android:theme="@style/Theme.AppCompat.Light"/>
+        <activity
+            android:name=".lbs.LBSActivity"
+            android:theme="@style/Theme.AppCompat.Light">
+        </activity>
+        <activity
+            android:name=".materialdesign.MaterialDesignActivity"
+            android:theme="@style/NoActionBarTheme">
+        </activity>
+        <activity
+            android:name=".materialdesign.CollapsingToolbarLayoutActivity"
+            android:theme="@style/CollapsingToolbarLayoutActivityTheme">
+        </activity>
+        <activity android:name=".thread.ThreadActivity">
+        </activity>
+        <activity android:name=".thread.DownloadActivity">
+        </activity>
+        <activity android:name=".service.ServiceActivity">
+        </activity>
 
         <!-- 广播接收器注册 -->
         <!-- enabled表示是否启用广播接收器，exported表示是否接收此程序外的广播信息 -->
@@ -60,7 +139,7 @@
             android:enabled="true"
             android:exported="true">
             <intent-filter>
-                <action android:name="android.intent.action.BOOT_COMPLETED" />
+                <action android:name="android.intent.action.BOOT_COMPLETED"/>
             </intent-filter>
         </receiver>
         <receiver
@@ -70,9 +149,30 @@
 
             <!-- 设置广播优先级和action值 -->
             <intent-filter android:priority="100">
-                <action android:name="sun.geonoon.wh.androidtest.MY_BROADCAST" />
+                <action android:name="sun.geonoon.wh.androidtest.MY_BROADCAST"/>
             </intent-filter>
         </receiver>
+
+        <provider
+            android:name="android.support.v4.content.FileProvider"
+            android:authorities="sun.geonoon.wh.androidtest.fileprovider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/file_paths"/>
+        </provider>
+
+        <service
+            android:name="com.baidu.location.f"
+            android:enabled="true"
+            android:process=":remote"/>
+        <service
+            android:name=".service.MyService"
+            android:enabled="true"
+            android:exported="true">
+        </service>
+        <service android:name=".service.MyIntentService" />
     </application>
 
 </manifest>
