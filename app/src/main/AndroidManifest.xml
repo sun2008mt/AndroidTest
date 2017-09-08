@@ -125,6 +125,10 @@
             android:name=".materialdesign.CollapsingToolbarLayoutActivity"
             android:theme="@style/CollapsingToolbarLayoutActivityTheme">
         </activity>
+        <activity android:name=".thread.ThreadActivity">
+        </activity>
+        <activity android:name=".thread.DownloadActivity">
+        </activity>
         <activity android:name=".service.ServiceActivity">
         </activity>
 
@@ -163,17 +167,12 @@
             android:name="com.baidu.location.f"
             android:enabled="true"
             android:process=":remote"/>
-
-        <activity android:name=".thread.ThreadActivity">
-        </activity>
-        <activity android:name=".thread.DownloadActivity">
-        </activity>
-
         <service
             android:name=".service.MyService"
             android:enabled="true"
             android:exported="true">
         </service>
+        <service android:name=".service.MyIntentService" />
     </application>
 
 </manifest>

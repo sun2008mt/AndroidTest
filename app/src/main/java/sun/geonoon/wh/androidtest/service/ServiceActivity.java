@@ -53,8 +53,14 @@ public class ServiceActivity extends AppCompatActivity {
         });
 
         findViewById(R.id.unbind_service).setOnClickListener(view -> {
-            Intent unbindIntent = new Intent(ServiceActivity.this, MyService.class);
+//            Intent unbindIntent = new Intent(ServiceActivity.this, MyService.class);
             unbindService(connection);
+        });
+
+        findViewById(R.id.start_intent_service).setOnClickListener(view -> {
+            Log.e("MainActivity: ", "Thread id is " + Thread.currentThread().getId());
+            Intent intentService = new Intent(ServiceActivity.this, MyIntentService.class);
+            startService(intentService);
         });
     }
 }
