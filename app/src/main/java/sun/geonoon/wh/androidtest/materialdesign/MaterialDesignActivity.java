@@ -6,6 +6,7 @@ import android.support.design.widget.NavigationView;
 import android.support.design.widget.Snackbar;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
+import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -29,18 +30,20 @@ public class MaterialDesignActivity extends AppCompatActivity {
 
     private static Type[] types = {
             new Type(R.drawable.area_01, "Area 01"),
-            new Type(R.drawable.area_05, "Area 01"),
-            new Type(R.drawable.area_06, "Area 01"),
-            new Type(R.drawable.area_07, "Area 01"),
-            new Type(R.drawable.area_08, "Area 01"),
-            new Type(R.drawable.area_09, "Area 01"),
-            new Type(R.drawable.area_14, "Area 01"),
-            new Type(R.drawable.area_15, "Area 01"),
-            new Type(R.drawable.area_16, "Area 01"),
-            new Type(R.drawable.area_98, "Area 01")
+            new Type(R.drawable.area_05, "Area 05"),
+            new Type(R.drawable.area_06, "Area 06"),
+            new Type(R.drawable.area_07, "Area 07"),
+            new Type(R.drawable.area_08, "Area 08"),
+            new Type(R.drawable.area_09, "Area 09"),
+            new Type(R.drawable.area_14, "Area 14"),
+            new Type(R.drawable.area_15, "Area 15"),
+            new Type(R.drawable.area_16, "Area 16"),
+            new Type(R.drawable.area_98, "Area 98")
     };
 
     private DrawerLayout mDrawerLayout;
+
+    private SwipeRefreshLayout swipeRefreshLayout;
 
     private List<Type> typeList = new ArrayList<>();
 
@@ -96,6 +99,16 @@ public class MaterialDesignActivity extends AppCompatActivity {
         recyclerView.setLayoutManager(layoutManager);
         adapter = new TypeCardViewAdapter(typeList);
         recyclerView.setAdapter(adapter);
+
+        swipeRefreshLayout = (SwipeRefreshLayout) findViewById(R.id.swipe_refresh);
+        //下拉刷新进度条的颜色
+        swipeRefreshLayout.setColorSchemeColors(R.color.colorPrimary);
+        swipeRefreshLayout.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
+            @Override
+            public void onRefresh() {
+                refreshTypes();
+            }
+        });
     }
 
     @Override
@@ -135,5 +148,28 @@ public class MaterialDesignActivity extends AppCompatActivity {
             int index = random.nextInt(types.length);
             typeList.add(types[index]);
         }
+    }
+
+    private void refreshTypes() {
+        new Thread(new Runnable() {
+            @Override
+            public void run() {
+                try {
+                    Thread.sleep(2000);
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
+
+                runOnUiThread(new Runnable() {
+                    @Override
+                    public void run() {
+                        initTypes();
+                        adapter.notifyDataSetChanged();
+                        //刷新事件结束，隐藏刷新进度条
+                        swipeRefreshLayout.setRefreshing(false);
+                    }
+                });
+            }
+        }).start();
     }
 }

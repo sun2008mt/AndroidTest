@@ -1,6 +1,7 @@
 package sun.geonoon.wh.androidtest.materialdesign;
 
 import android.content.Context;
+import android.content.Intent;
 import android.support.v7.widget.CardView;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -52,7 +53,19 @@ public class TypeCardViewAdapter extends RecyclerView.Adapter<TypeCardViewAdapte
         }
 
         View view = LayoutInflater.from(mContext).inflate(R.layout.item_type_cardview, parent, false);
-        return new ViewHolder(view);
+        final ViewHolder holder = new ViewHolder(view);
+        holder.cardView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                int position = holder.getAdapterPosition();
+                Type type = mTypeList.get(position);
+                Intent intent = new Intent(mContext, CollapsingToolbarLayoutActivity.class);
+                intent.putExtra(CollapsingToolbarLayoutActivity.TYPE_NAME, type.getName());
+                intent.putExtra(CollapsingToolbarLayoutActivity.TYPE_IMAGE_ID, type.getImageId());
+                mContext.startActivity(intent);
+            }
+        });
+        return holder;
     }
 
     @Override

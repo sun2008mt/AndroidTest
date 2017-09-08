@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 此目录只有API21以上（Android 5.0及以上）的系统才会去读取 -->
+<resources>
+
+    <style name="CollapsingToolbarLayoutActivityTheme" parent="NoActionBarTheme">
+        <item name="android:statusBarColor">@android:color/transparent</item>
+    </style>
+
+</resources>

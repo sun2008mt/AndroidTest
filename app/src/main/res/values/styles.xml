@@ -17,4 +17,7 @@
 
     <style name="TestTheme" parent="Theme.AppCompat.DayNight"></style>
 
+    <style name="CollapsingToolbarLayoutActivityTheme" parent="NoActionBarTheme">
+    </style>
+
 </resources>

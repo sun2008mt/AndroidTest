@@ -116,8 +116,12 @@
             android:name=".lbs.LBSActivity"
             android:theme="@style/Theme.AppCompat.Light">
         </activity>
-        <activity android:name=".materialdesign.MaterialDesignActivity"
+        <activity
+            android:name=".materialdesign.MaterialDesignActivity"
             android:theme="@style/NoActionBarTheme">
+        </activity>
+        <activity android:name=".materialdesign.CollapsingToolbarLayoutActivity"
+                  android:theme="@style/CollapsingToolbarLayoutActivityTheme">
         </activity>
 
         <!-- 广播接收器注册 -->
