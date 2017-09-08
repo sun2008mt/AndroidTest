@@ -125,6 +125,8 @@
             android:name=".materialdesign.CollapsingToolbarLayoutActivity"
             android:theme="@style/CollapsingToolbarLayoutActivityTheme">
         </activity>
+        <activity android:name=".service.ServiceActivity">
+        </activity>
 
         <!-- 广播接收器注册 -->
         <!-- enabled表示是否启用广播接收器，exported表示是否接收此程序外的广播信息 -->
@@ -172,9 +174,6 @@
             android:enabled="true"
             android:exported="true">
         </service>
-
-        <activity android:name=".service.ServiceActivity">
-        </activity>
     </application>
 
 </manifest>
