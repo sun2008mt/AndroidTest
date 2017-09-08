@@ -5,7 +5,7 @@
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="sun.geonoon.wh.androidtest.network.HttpActivity">
+    tools:context="sun.geonoon.wh.androidtest.network_xml.HttpActivity">
 
     <Button
         android:id="@+id/btn_send_request"
@@ -17,7 +17,13 @@
         android:id="@+id/btn_send_request_okhttp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="OkHttp"/>
+        android:text="OkHttp_PULL"/>
+
+    <Button
+        android:id="@+id/btn_send_request_okhttp_sax"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="OkHttp_SAX"/>
 
     <ScrollView
         android:layout_width="match_parent"
