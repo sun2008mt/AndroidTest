@@ -22,6 +22,8 @@ import sun.geonoon.wh.androidtest.news.NewsActivity;
 import sun.geonoon.wh.androidtest.notification.NotificationActivity;
 import sun.geonoon.wh.androidtest.recyclerview.RecyclerViewActivity;
 import sun.geonoon.wh.androidtest.runtimepermissions.CallPhoneActivity;
+import sun.geonoon.wh.androidtest.thread.DownloadActivity;
+import sun.geonoon.wh.androidtest.thread.ThreadActivity;
 import sun.geonoon.wh.androidtest.webview.WebViewActivity;
 import sun.geonoon.wh.androidtest.widgets.TitleActivity;
 
@@ -209,14 +211,16 @@ public class MainActivity extends BaseActivity {
         findViewById(R.id.btn22).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
+                Intent intent = new Intent(MainActivity.this, ThreadActivity.class);
+                startActivity(intent);
             }
         });
 
         findViewById(R.id.btn23).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
+                Intent intent = new Intent(MainActivity.this, DownloadActivity.class);
+                startActivity(intent);
             }
         });
 

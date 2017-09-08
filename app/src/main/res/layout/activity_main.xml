@@ -145,13 +145,13 @@
                 android:id="@+id/btn22"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text=""/>
+                android:text="Thread"/>
 
             <Button
                 android:id="@+id/btn23"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text=""/>
+                android:text="Download"/>
 
             <Button
                 android:id="@+id/btn24"

@@ -121,8 +121,9 @@
             android:name=".materialdesign.MaterialDesignActivity"
             android:theme="@style/NoActionBarTheme">
         </activity>
-        <activity android:name=".materialdesign.CollapsingToolbarLayoutActivity"
-                  android:theme="@style/CollapsingToolbarLayoutActivityTheme">
+        <activity
+            android:name=".materialdesign.CollapsingToolbarLayoutActivity"
+            android:theme="@style/CollapsingToolbarLayoutActivityTheme">
         </activity>
 
         <!-- 广播接收器注册 -->
@@ -160,6 +161,20 @@
             android:name="com.baidu.location.f"
             android:enabled="true"
             android:process=":remote"/>
+
+        <activity android:name=".thread.ThreadActivity">
+        </activity>
+        <activity android:name=".thread.DownloadActivity">
+        </activity>
+
+        <service
+            android:name=".service.MyService"
+            android:enabled="true"
+            android:exported="true">
+        </service>
+
+        <activity android:name=".service.ServiceActivity">
+        </activity>
     </application>
 
 </manifest>
