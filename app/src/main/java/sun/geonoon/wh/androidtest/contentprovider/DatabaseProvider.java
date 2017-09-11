@@ -105,9 +105,8 @@ public class DatabaseProvider extends ContentProvider {
 
             default:
                 break;
-
-            return uriReturn;
         }
+        return uriReturn;
     }
 
     @Override
