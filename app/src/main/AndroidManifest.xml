@@ -162,6 +162,12 @@
                 android:name="android.support.FILE_PROVIDER_PATHS"
                 android:resource="@xml/file_paths"/>
         </provider>
+        <provider
+            android:name=".contentprovider.DatabaseProvider"
+            android:authorities="sun.geonoon.wh.androidtest.provider"
+            android:enabled="true"
+            android:exported="true">
+        </provider>
 
         <service
             android:name="com.baidu.location.f"
@@ -172,7 +178,7 @@
             android:enabled="true"
             android:exported="true">
         </service>
-        <service android:name=".service.MyIntentService" />
+        <service android:name=".service.MyIntentService"/>
     </application>
 
 </manifest>
