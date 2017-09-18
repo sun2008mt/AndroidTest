@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.widget.Toast;
 
+import sun.geonoon.wh.androidtest.audio.PlayAudioActivity;
 import sun.geonoon.wh.androidtest.broadcast.BroadcastActivity;
 import sun.geonoon.wh.androidtest.broadcast.LocalBroadcastActivity;
 import sun.geonoon.wh.androidtest.camera.CameraActivity;
@@ -161,7 +162,8 @@ public class MainActivity extends BaseActivity {
         });
 
         findViewById(R.id.btn25).setOnClickListener(view -> {
-
+            Intent intent = new Intent(MainActivity.this, PlayAudioActivity.class);
+            startActivity(intent);
         });
     }
 }
