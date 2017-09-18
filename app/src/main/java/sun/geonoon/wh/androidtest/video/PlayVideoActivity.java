@@ -45,7 +45,7 @@ public class PlayVideoActivity extends AppCompatActivity implements View.OnClick
     }
 
     private void initVideoPath() {
-        File file = new File(Environment.getExternalStorageDirectory(), "movie.mp4");
+        File file = new File(Environment.getExternalStorageDirectory(), "video.mp4");
         videoView.setVideoPath(file.getPath());
     }
 

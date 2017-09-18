@@ -47,7 +47,7 @@ public class PlayAudioActivity extends AppCompatActivity implements View.OnClick
 
     private void initMediaPlayer() {
         try {
-            File file = new File(Environment.getExternalStorageDirectory(), "music.mp3");
+            File file = new File(Environment.getExternalStorageDirectory(), "video.mp4");
             mediaPlayer.setDataSource(file.getPath());            //指定音頻文件的路徑
             mediaPlayer.prepare();                //讓MediaPlayer進入到準備狀態
 
