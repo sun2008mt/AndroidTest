@@ -49,11 +49,12 @@ public class PlayAudioActivity extends AppCompatActivity implements View.OnClick
         try {
             File file = new File(Environment.getExternalStorageDirectory(), "music.mp3");
             mediaPlayer.setDataSource(file.getPath());            //指定音頻文件的路徑
-            mediaPlayer.prepare();
+            mediaPlayer.prepare();                //讓MediaPlayer進入到準備狀態
 
             int duration = mediaPlayer.getDuration();
             Log.e("Audio Duration: ", duration + "");
         } catch (IOException e) {
+            Log.e("Audio IOException: ", "錯誤");
             e.printStackTrace();
         }
     }

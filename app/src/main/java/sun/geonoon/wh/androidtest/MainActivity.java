@@ -25,6 +25,7 @@ import sun.geonoon.wh.androidtest.runtimepermissions.CallPhoneActivity;
 import sun.geonoon.wh.androidtest.service.ServiceActivity;
 import sun.geonoon.wh.androidtest.thread.DownloadActivity;
 import sun.geonoon.wh.androidtest.thread.ThreadActivity;
+import sun.geonoon.wh.androidtest.video.PlayVideoActivity;
 import sun.geonoon.wh.androidtest.webview.WebViewActivity;
 import sun.geonoon.wh.androidtest.widgets.TitleActivity;
 
@@ -163,6 +164,11 @@ public class MainActivity extends BaseActivity {
 
         findViewById(R.id.btn25).setOnClickListener(view -> {
             Intent intent = new Intent(MainActivity.this, PlayAudioActivity.class);
+            startActivity(intent);
+        });
+
+        findViewById(R.id.btn26).setOnClickListener(view -> {
+            Intent intent = new Intent(MainActivity.this, PlayVideoActivity.class);
             startActivity(intent);
         });
     }
