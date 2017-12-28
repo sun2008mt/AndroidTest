@@ -54,10 +54,10 @@ public class MaterialDesignActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_matirial_design);
 
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-        mDrawerLayout = (DrawerLayout) findViewById(R.id.drawer_layout);
-        NavigationView navView = (NavigationView) findViewById(R.id.nav_view);
+        mDrawerLayout = findViewById(R.id.drawer_layout);
+        NavigationView navView = findViewById(R.id.nav_view);
         //此ActionBar的具体实现是由ToolBar来完成的
         ActionBar actionBar = getSupportActionBar();
         if (actionBar != null) {
@@ -69,46 +69,30 @@ public class MaterialDesignActivity extends AppCompatActivity {
 
         //将Call菜单项设置为默认选中
         navView.setCheckedItem(R.id.nav_call);
-        navView.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
-            @Override
-            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
-                Toast.makeText(MaterialDesignActivity.this, "You clicked on " + item.getTitle(), Toast.LENGTH_SHORT).show();
-                return true;
-            }
+        navView.setNavigationItemSelectedListener(item -> {
+            Toast.makeText(MaterialDesignActivity.this, "You clicked on " + item.getTitle(), Toast.LENGTH_SHORT).show();
+            return true;
         });
 
-        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.btn_floating);
-        fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                //第一个参数表示当前界面任意控件，Snackbar会通过这个View自动查找最外层的布局
-                Snackbar.make(view, "Data deleted", Snackbar.LENGTH_SHORT)
-                        .setAction("Undo", new View.OnClickListener() {
-                            @Override
-                            public void onClick(View view) {
-                                Toast.makeText(MaterialDesignActivity.this, "Data restored", Toast.LENGTH_SHORT).show();
-                            }
-                        })
-                        .show();
-            }
+        FloatingActionButton fab = findViewById(R.id.btn_floating);
+        fab.setOnClickListener(view -> {
+            //第一个参数表示当前界面任意控件，Snackbar会通过这个View自动查找最外层的布局
+            Snackbar.make(view, "Data deleted", Snackbar.LENGTH_SHORT)
+                    .setAction("Undo", view1 -> Toast.makeText(MaterialDesignActivity.this, "Data restored", Toast.LENGTH_SHORT).show())
+                    .show();
         });
 
         initTypes();
-        RecyclerView recyclerView = (RecyclerView) findViewById(R.id.recycler_view);
+        RecyclerView recyclerView = findViewById(R.id.recycler_view);
         GridLayoutManager layoutManager = new GridLayoutManager(this, 2);
         recyclerView.setLayoutManager(layoutManager);
         adapter = new TypeCardViewAdapter(typeList);
         recyclerView.setAdapter(adapter);
 
-        swipeRefreshLayout = (SwipeRefreshLayout) findViewById(R.id.swipe_refresh);
+        swipeRefreshLayout = findViewById(R.id.swipe_refresh);
         //下拉刷新进度条的颜色
-        swipeRefreshLayout.setColorSchemeColors(R.color.colorPrimary);
-        swipeRefreshLayout.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
-            @Override
-            public void onRefresh() {
-                refreshTypes();
-            }
-        });
+        swipeRefreshLayout.setColorSchemeColors(getResources().getColor(R.color.colorPrimary));
+        swipeRefreshLayout.setOnRefreshListener(() -> refreshTypes());
     }
 
     @Override
@@ -151,25 +135,19 @@ public class MaterialDesignActivity extends AppCompatActivity {
     }
 
     private void refreshTypes() {
-        new Thread(new Runnable() {
-            @Override
-            public void run() {
-                try {
-                    Thread.sleep(2000);
-                } catch (InterruptedException e) {
-                    e.printStackTrace();
-                }
-
-                runOnUiThread(new Runnable() {
-                    @Override
-                    public void run() {
-                        initTypes();
-                        adapter.notifyDataSetChanged();
-                        //刷新事件结束，隐藏刷新进度条
-                        swipeRefreshLayout.setRefreshing(false);
-                    }
-                });
+        new Thread(() -> {
+            try {
+                Thread.sleep(2000);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
             }
+
+            runOnUiThread(() -> {
+                initTypes();
+                adapter.notifyDataSetChanged();
+                //刷新事件结束，隐藏刷新进度条
+                swipeRefreshLayout.setRefreshing(false);
+            });
         }).start();
     }
 }

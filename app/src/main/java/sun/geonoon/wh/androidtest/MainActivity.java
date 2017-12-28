@@ -2,7 +2,12 @@ package sun.geonoon.wh.androidtest;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.widget.Toast;
+
+import com.whu.sun.commonutils.PhoneInfoUtils;
+
+import org.litepal.util.LogUtil;
 
 import sun.geonoon.wh.androidtest.audio.PlayAudioActivity;
 import sun.geonoon.wh.androidtest.broadcast.BroadcastActivity;
@@ -170,6 +175,16 @@ public class MainActivity extends BaseActivity {
         findViewById(R.id.btn26).setOnClickListener(view -> {
             Intent intent = new Intent(MainActivity.this, PlayVideoActivity.class);
             startActivity(intent);
+        });
+
+        findViewById(R.id.btn27).setOnClickListener(view -> {
+            String nativePhoneNumber = PhoneInfoUtils.getNativePhoneNumber(this);
+            String providerName = PhoneInfoUtils.getProviderName(this);
+            String phoneInfo = PhoneInfoUtils.getPhoneInfo(this);
+
+            Log.e("MainActivity", nativePhoneNumber);
+            Log.e("MainActivity", providerName);
+            Log.e("MainActivity", phoneInfo);
         });
     }
 }
