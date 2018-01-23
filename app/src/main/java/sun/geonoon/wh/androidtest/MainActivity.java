@@ -2,13 +2,21 @@ package sun.geonoon.wh.androidtest;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.provider.ContactsContract;
+import android.util.Log;
 import android.widget.Toast;
 
+import com.whu.sun.commonutils.PhoneInfoUtils;
+
+import org.litepal.util.LogUtil;
+
+import sun.geonoon.wh.androidtest.audio.PlayAudioActivity;
 import sun.geonoon.wh.androidtest.broadcast.BroadcastActivity;
 import sun.geonoon.wh.androidtest.broadcast.LocalBroadcastActivity;
 import sun.geonoon.wh.androidtest.camera.CameraActivity;
 import sun.geonoon.wh.androidtest.contentprovider.ReadContactsActivity;
 import sun.geonoon.wh.androidtest.database.CreateDBActivity;
+import sun.geonoon.wh.androidtest.databinding.DataBindingActivity;
 import sun.geonoon.wh.androidtest.datapersistence.FilePersistenceActivity;
 import sun.geonoon.wh.androidtest.datapersistence.SharedPreferenceActivity;
 import sun.geonoon.wh.androidtest.forceoffline.LoginActivity;
@@ -16,6 +24,7 @@ import sun.geonoon.wh.androidtest.fragments.FragmentsActivity;
 import sun.geonoon.wh.androidtest.lbs.LBSActivity;
 import sun.geonoon.wh.androidtest.materialdesign.MaterialDesignActivity;
 import sun.geonoon.wh.androidtest.messaging.MessagingActivity;
+import sun.geonoon.wh.androidtest.mvp.UserActivity;
 import sun.geonoon.wh.androidtest.network_xml.HttpActivity;
 import sun.geonoon.wh.androidtest.news.NewsActivity;
 import sun.geonoon.wh.androidtest.notification.NotificationActivity;
@@ -24,6 +33,7 @@ import sun.geonoon.wh.androidtest.runtimepermissions.CallPhoneActivity;
 import sun.geonoon.wh.androidtest.service.ServiceActivity;
 import sun.geonoon.wh.androidtest.thread.DownloadActivity;
 import sun.geonoon.wh.androidtest.thread.ThreadActivity;
+import sun.geonoon.wh.androidtest.video.PlayVideoActivity;
 import sun.geonoon.wh.androidtest.webview.WebViewActivity;
 import sun.geonoon.wh.androidtest.widgets.TitleActivity;
 
@@ -161,7 +171,33 @@ public class MainActivity extends BaseActivity {
         });
 
         findViewById(R.id.btn25).setOnClickListener(view -> {
+            Intent intent = new Intent(MainActivity.this, PlayAudioActivity.class);
+            startActivity(intent);
+        });
 
+        findViewById(R.id.btn26).setOnClickListener(view -> {
+            Intent intent = new Intent(MainActivity.this, PlayVideoActivity.class);
+            startActivity(intent);
+        });
+
+        findViewById(R.id.btn27).setOnClickListener(view -> {
+            String nativePhoneNumber = PhoneInfoUtils.getNativePhoneNumber(this);
+            String providerName = PhoneInfoUtils.getProviderName(this);
+            String phoneInfo = PhoneInfoUtils.getPhoneInfo(this);
+
+            Log.e("MainActivity", nativePhoneNumber);
+            Log.e("MainActivity", providerName);
+            Log.e("MainActivity", phoneInfo);
+        });
+
+        findViewById(R.id.btn28).setOnClickListener(v -> {
+            Intent intent = new Intent(MainActivity.this, DataBindingActivity.class);
+            startActivity(intent);
+        });
+
+        findViewById(R.id.btn29).setOnClickListener(v -> {
+            Intent intent = new Intent(MainActivity.this, UserActivity.class);
+            startActivity(intent);
         });
     }
 }

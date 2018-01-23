@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+    <data>
+        <import type="com.whu.sun.commonutils.PhoneInfoUtils" />
+
+        <variable
+            name="user"
+            type="sun.geonoon.wh.androidtest.databinding.User" />
+
+        <variable
+            name="presenter"
+            type="sun.geonoon.wh.androidtest.databinding.DataBindingActivityPresenter" />
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@={user.name}"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@={user.age}"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@{PhoneInfoUtils.test()}"/>
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="测试"
+            android:onClick="@{() -> presenter.onShowData(user)}"/>
+
+    </LinearLayout>
+</layout>
