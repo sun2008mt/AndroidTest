@@ -77,4 +77,8 @@ public class PhoneInfoUtils {
 
         return sb.toString();
     }
+
+    public static String test() {
+        return "Hello!!!";
+    }
 }

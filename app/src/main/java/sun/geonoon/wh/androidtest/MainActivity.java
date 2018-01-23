@@ -2,6 +2,7 @@ package sun.geonoon.wh.androidtest;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.provider.ContactsContract;
 import android.util.Log;
 import android.widget.Toast;
 
@@ -15,6 +16,7 @@ import sun.geonoon.wh.androidtest.broadcast.LocalBroadcastActivity;
 import sun.geonoon.wh.androidtest.camera.CameraActivity;
 import sun.geonoon.wh.androidtest.contentprovider.ReadContactsActivity;
 import sun.geonoon.wh.androidtest.database.CreateDBActivity;
+import sun.geonoon.wh.androidtest.databinding.DataBindingActivity;
 import sun.geonoon.wh.androidtest.datapersistence.FilePersistenceActivity;
 import sun.geonoon.wh.androidtest.datapersistence.SharedPreferenceActivity;
 import sun.geonoon.wh.androidtest.forceoffline.LoginActivity;
@@ -22,6 +24,7 @@ import sun.geonoon.wh.androidtest.fragments.FragmentsActivity;
 import sun.geonoon.wh.androidtest.lbs.LBSActivity;
 import sun.geonoon.wh.androidtest.materialdesign.MaterialDesignActivity;
 import sun.geonoon.wh.androidtest.messaging.MessagingActivity;
+import sun.geonoon.wh.androidtest.mvp.UserActivity;
 import sun.geonoon.wh.androidtest.network_xml.HttpActivity;
 import sun.geonoon.wh.androidtest.news.NewsActivity;
 import sun.geonoon.wh.androidtest.notification.NotificationActivity;
@@ -185,6 +188,16 @@ public class MainActivity extends BaseActivity {
             Log.e("MainActivity", nativePhoneNumber);
             Log.e("MainActivity", providerName);
             Log.e("MainActivity", phoneInfo);
+        });
+
+        findViewById(R.id.btn28).setOnClickListener(v -> {
+            Intent intent = new Intent(MainActivity.this, DataBindingActivity.class);
+            startActivity(intent);
+        });
+
+        findViewById(R.id.btn29).setOnClickListener(v -> {
+            Intent intent = new Intent(MainActivity.this, UserActivity.class);
+            startActivity(intent);
         });
     }
 }
