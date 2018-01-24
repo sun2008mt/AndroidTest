@@ -15,8 +15,9 @@
             android:layout_width="90dp"
             android:layout_height="wrap_content"
             android:layout_gravity="center_vertical"
+            android:fontFamily="@font/adamina"
             android:text="Account: "
-            android:textSize="18sp" />
+            android:textSize="18sp"/>
 
         <EditText
             android:id="@+id/account"

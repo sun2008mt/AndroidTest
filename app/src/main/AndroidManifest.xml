@@ -60,6 +60,11 @@
             android:value="mGqVgyMSEkUVTmgPE02zRtYsivZi4KVK">
         </meta-data>
 
+        <!-- 预加载字体 -->
+        <meta-data
+            android:name="preloaded_fonts"
+            android:resource="@array/preloaded_fonts"/>
+
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
