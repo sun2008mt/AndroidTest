@@ -7,6 +7,7 @@ package sun.geonoon.wh.androidtest.databinding;
 public interface DataBindingActivityContract {
     public interface Presenter {
         void onShowData(User user);
+        void showList();
     }
 
     public interface View {

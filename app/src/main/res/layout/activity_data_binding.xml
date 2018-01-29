@@ -35,8 +35,14 @@
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="测试"
+            android:text="显示信息"
             android:onClick="@{() -> presenter.onShowData(user)}"/>
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="显示列表"
+            android:onClick="@{() -> presenter.showList()}"/>
 
     </LinearLayout>
 </layout>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+    <data>
+        <variable
+            name="user"
+            type="sun.geonoon.wh.androidtest.databinding.User"/>
+
+        <variable
+            name="presenter"
+            type="sun.geonoon.wh.androidtest.databinding.DataBindingActivityPresenter" />
+    </data>
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/my_recycler_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scrollbars="vertical" />
+</layout>
+
