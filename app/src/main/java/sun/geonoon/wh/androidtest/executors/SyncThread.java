@@ -17,11 +17,11 @@ public class SyncThread extends Thread {
     @Override
     public void run() {
         //执行耗时操作
-        Log.e("SyncRunnable", "=========================");
+        Log.e("SyncThread", "=========================");
 
         synchronized (obj) {
             for (int i = 0; i < 10; i++) {
-                System.out.printf("%s: %d\n", this.getName(), i);
+                Log.e("SyncThread", this.getName() + " " + i);
 
                 if (i % 4 == 0) {
                     try {

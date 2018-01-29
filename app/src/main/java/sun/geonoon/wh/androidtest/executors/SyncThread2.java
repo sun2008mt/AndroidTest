@@ -1,5 +1,7 @@
 package sun.geonoon.wh.androidtest.executors;
 
+import android.util.Log;
+
 /**
  * Created by Administrator on 2018/1/29.
  */
@@ -14,10 +16,11 @@ public class SyncThread2 extends Thread {
 
     @Override
     public void run() {
+        Log.e("SyncThread2", "=========================");
 
         synchronized (obj) {
             for (int i = 0; i < 10; i++) {
-                System.out.printf("%s: %d\n", this.getName(), i);
+                Log.e("SyncThread2", this.getName() + " " + i);
 
                 if (i % 4 == 0) {
                     Thread.yield();
