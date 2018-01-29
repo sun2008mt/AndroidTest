@@ -13,7 +13,7 @@ public class DataBindingActivityPresenter implements DataBindingActivityContract
 
     private Context context;
 
-    public DataBindingActivityPresenter(DataBindingActivityContract.View view) {
+    public DataBindingActivityPresenter(DataBindingActivityContract.View view, Context context) {
         this.view = view;
         this.context = context;
     }

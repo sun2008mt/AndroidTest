@@ -17,7 +17,7 @@ public class DataBindingActivity extends AppCompatActivity implements DataBindin
         //生成的数据绑定类继承ViewDataBinding基类，并且命名根据layout文件名，在后面加上Binding后缀
         ActivityDataBindingBinding binding = DataBindingUtil.setContentView(this, R.layout.activity_data_binding);
 
-        DataBindingActivityPresenter presenter = new DataBindingActivityPresenter(this);
+        DataBindingActivityPresenter presenter = new DataBindingActivityPresenter(this, this);
 
         User user = new User("marc", "22", "http://lorempixel.com/40/40/");
         binding.setUser(user);
