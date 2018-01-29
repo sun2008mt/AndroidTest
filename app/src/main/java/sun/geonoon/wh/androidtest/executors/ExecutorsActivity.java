@@ -13,8 +13,10 @@ public class ExecutorsActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_executors);
 
-        //测试线程
-        testThread();
+        findViewById(R.id.thread_test).setOnClickListener(v -> {
+            //测试线程
+            testThread();
+        });
     }
 
     private void testThread() {
@@ -23,6 +25,7 @@ public class ExecutorsActivity extends AppCompatActivity {
         Log.e("MainThread", currentThread.getName());
 
         //sleep()不会释放所持有的对象同步锁
+        //当一个线程处于睡眠状态时，若被其他线程调用interrupt()方法中断，则sleep()方法会抛出InterruptedException异常
         SyncThread thread1 = new SyncThread("thread 1");
         SyncThread thread2 = new SyncThread("thread 2");
         SyncThread thread3 = new SyncThread("thread 3");

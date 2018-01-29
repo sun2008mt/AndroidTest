@@ -25,7 +25,10 @@ public class SyncThread extends Thread {
 
                 if (i % 4 == 0) {
                     try {
-                        Thread.sleep(1000);                 //不会释放同步锁
+                        Thread.sleep(3000);                 //不会释放同步锁
+
+                        //要等待至少3秒才会打印下面字符串
+                        Log.e("SyncThread", "打印测试...");
                     } catch (InterruptedException e) {
                         e.printStackTrace();
                     }
