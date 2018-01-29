@@ -2,6 +2,7 @@ package sun.geonoon.wh.androidtest.executors;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 
 import sun.geonoon.wh.androidtest.R;
 
@@ -17,6 +18,10 @@ public class ExecutorsActivity extends AppCompatActivity {
     }
 
     private void testThread() {
+        Thread currentThread = Thread.currentThread();
+        Log.e("MainThread", "=========================");
+        Log.e("MainThread", currentThread.getName());
+
         //sleep()不会释放所持有的对象同步锁
         SyncThread thread1 = new SyncThread("thread 1");
         SyncThread thread2 = new SyncThread("thread 2");
