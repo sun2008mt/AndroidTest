@@ -13,10 +13,12 @@ import sun.geonoon.wh.androidtest.BR;
 public class User extends BaseObservable {
     private String name;
     private String age;
+    private String url;
 
-    public User(String name, String age) {
+    public User(String name, String age, String url) {
         this.name = name;
         this.age = age;
+        this.url = url;
     }
 
     public void setName(String name) {
@@ -37,6 +39,14 @@ public class User extends BaseObservable {
     @Bindable
     public String getAge() {
         return this.age;
+    }
+
+    public String getUrl() {
+        return url;
+    }
+
+    public void setUrl(String url) {
+        this.url = url;
     }
 
     @Override

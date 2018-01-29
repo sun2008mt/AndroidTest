@@ -19,7 +19,7 @@ public class DataBindingActivity extends AppCompatActivity implements DataBindin
 
         DataBindingActivityPresenter presenter = new DataBindingActivityPresenter(this);
 
-        User user = new User("marc", "22");
+        User user = new User("marc", "22", "http://lorempixel.com/40/40/");
         binding.setUser(user);
         binding.setPresenter(presenter);
 
