@@ -189,6 +189,13 @@
                 android:layout_height="wrap_content"
                 android:text="mvp mode"/>
 
+            <Button
+                android:id="@+id/btn30"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="executors"/>
+
+
         </LinearLayout>
 
     </ScrollView>

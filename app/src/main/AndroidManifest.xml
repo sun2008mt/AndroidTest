@@ -202,6 +202,8 @@
         </activity>
         <activity android:name=".mvp.UserActivity">
         </activity>
+        <activity android:name=".executors.ExecutorsActivity">
+        </activity>
     </application>
 
 </manifest>

@@ -19,6 +19,7 @@ import sun.geonoon.wh.androidtest.database.CreateDBActivity;
 import sun.geonoon.wh.androidtest.databinding.DataBindingActivity;
 import sun.geonoon.wh.androidtest.datapersistence.FilePersistenceActivity;
 import sun.geonoon.wh.androidtest.datapersistence.SharedPreferenceActivity;
+import sun.geonoon.wh.androidtest.executors.ExecutorsActivity;
 import sun.geonoon.wh.androidtest.forceoffline.LoginActivity;
 import sun.geonoon.wh.androidtest.fragments.FragmentsActivity;
 import sun.geonoon.wh.androidtest.lbs.LBSActivity;
@@ -197,6 +198,11 @@ public class MainActivity extends BaseActivity {
 
         findViewById(R.id.btn29).setOnClickListener(v -> {
             Intent intent = new Intent(MainActivity.this, UserActivity.class);
+            startActivity(intent);
+        });
+
+        findViewById(R.id.btn30).setOnClickListener(v -> {
+            Intent intent = new Intent(MainActivity.this, ExecutorsActivity.class);
             startActivity(intent);
         });
     }
